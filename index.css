@@ -1,0 +1,112 @@
+.container {
+  background-color: rgb(236, 236, 236);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+}
+
+.input1 {
+  width: 250px;
+  height: 20px;
+  border: solid;
+  border-color: antiquewhite;
+  border-radius: 10px;
+  margin: 2px;
+  transition: all 0.5s;
+}
+
+.input1:focus {
+  width: 255px;
+  height: 25px;
+  border-width: 5px;
+}
+
+.input1:hover {
+  width: 255px;
+  height: 25px;
+  box-shadow: 2px 2px 2px rgb(188, 188, 188);
+}
+
+.input2 {
+  width: 250px;
+  height: 20px;
+  border: solid;
+  border-color: antiquewhite;
+  border-radius: 10px;
+  margin: 2px;
+  transition: all 0.5s;
+}
+
+.input2:focus {
+  width: 255px;
+  height: 25px;
+  border-width: 5px;
+}
+
+.input2:hover {
+  width: 255px;
+  height: 25px;
+  box-shadow: 2px 2px 2px rgb(188, 188, 188);
+}
+
+.main-text {
+  vertical-align: center;
+    font-family: "Sevillana", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+.New-button {
+  position: absolute;
+  left: 150
+  px;
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 5px grey;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  transition: padding 0.25s , opacity 0.10s;
+}
+
+.New-button:hover {
+  padding: 8px;
+}
+
+.New-button:active {
+  opacity: 0.6;
+}
+
+.submit {
+  position: absolute;
+  left: 300px;
+  bottom: 230px;
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 5px grey;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  transition: padding 0.25s , opacity 0.10s;
+}
+
+.submit:hover {
+  padding: 8px;
+}
+
+.submit:active {
+  opacity: 0.6;
+}
+
+strong {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
