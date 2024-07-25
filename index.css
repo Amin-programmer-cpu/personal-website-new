@@ -3,11 +3,13 @@
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  width: 350px;
   height: 250px;
   position: absolute;
   left: 300px;
   top: 100px;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Maximum width */
+  margin: 0 auto; /* Center the container */
 }
 
 .input1 {
