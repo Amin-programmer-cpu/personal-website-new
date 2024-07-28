@@ -1,31 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Quote generator</title>
-    <!-- This code is needed for responsive design to work.
-      (Responsive design = make the website look good on
-      smaller screen sizes like a phone or a tablet). -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Sevillana&display=swap" rel="stylesheet">
+    <title>Digital Zone</title>
+</head>
+<body>
+    <div id="breaking-news">
+         <span id="news-items"></span>
+    </div>
 
-  </head>
-  <body>
-  <div class="container">
-    <input class="input1" type="text" placeholder="   Enter a Quote">
-    <input class="input2" type="text" placeholder="   Enter writer">
-    <button class="submit">submit</button>
-    <h2 class="main-text">click the new quote</h2>
-    <button class="New-button">New Quote</button>
-  </div>
+    <h1 class="title-text"><span class="h1-one">Digital</span> <span class="h1-two">Zone</span></h1>
 
-   
+
+          <div class="main">
+      <div class="body-news">
+        <img class="image-news" src="photo.JPG">
+        <p class="main-text">som description about the photo and news</p>
+        <button class="more-button">Learn more</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="body-news">
+        <img class="image-news" src="photo.JPG">
+        <p class="main-text">som description about the photo and news</p>
+        <button class="more-button">Learn more</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="body-news">
+        <img class="image-news" src="photo.JPG">
+        <p class="main-text">som description about the photo and news</p>
+        <button class="more-button">Learn more</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="body-news">
+        <img class="image-news" src="photo.JPG">
+        <p class="main-text">som description about the photo and news</p>
+        <button class="more-button">Learn more</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="body-news">
+        <img class="image-news" src="photo.JPG">
+        <p class="main-text">som description about the photo and news</p>
+        <button class="more-button">Learn more</button>
+      </div>
+    </div>
+    
+
+
+    <div class="contact">
+      <p class="para">Contact us</p>
+      <a href="https://t.me/Digital_Zone1389">Telegram channel</a>
+    </div>
+
     <script src="index.js"></script>
-  </body>
+    <script>
+        const newsItemsContainer = document.getElementById('news-items');
+
+        // Function to add breaking news
+        function addBreakingNews(news) {
+            const newsItem = document.createElement('span');
+            newsItem.className = 'news-item';
+            newsItem.textContent = news;
+
+            newsItemsContainer.appendChild(newsItem);
+        }
+
+        // Function to remove all breaking news
+        function clearBreakingNews() {
+            newsItemsContainer.innerHTML = '';
+        }
+
+        // Example usage
+        addBreakingNews('New NES Game Released!');
+        addBreakingNews('Tech Conference Announced!');
+        
+        // Uncomment the line below to clear news items
+        // clearBreakingNews();
+    </script>
+</body>
 </html>
