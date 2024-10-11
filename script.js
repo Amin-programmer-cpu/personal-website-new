@@ -36,7 +36,11 @@ const translations = {
         contact_title: "Contact Me",
         contact_button: "Send Message",
         contact_email: "Email:",
-        contact_telegram: "Telegram:"
+        contact_telegram: "Telegram:",
+        trending_title: "Trending",
+        trending_caption1: "Trending Topic 1",
+        trending_caption2: "Trending Topic 2",
+        trending_caption3: "Trending Topic 3"
     },
     fa: {
         nav_home: "خانه",
@@ -60,7 +64,11 @@ const translations = {
         contact_title: "تماس با من",
         contact_button: "ارسال پیام",
         contact_email: "ایمیل:",
-        contact_telegram: "تلگرام:"
+        contact_telegram: "تلگرام:",
+        trending_title: "مورد توجه",
+        trending_caption1: "موضوع مورد توجه ۱",
+        trending_caption2: "موضوع مورد توجه ۲",
+        trending_caption3: "موضوع مورد توجه ۳"
     }
 };
 
@@ -167,3 +175,64 @@ document.addEventListener('click', (e) => {
         searchResults.innerHTML = '';
     }
 });
+
+// Slideshow Functionality
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const prev = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const dots = document.querySelectorAll('.dot');
+
+function showSlides(n) {
+    if (n >= slides.length) {slideIndex = 0}
+    if (n < 0) {slideIndex = slides.length - 1}
+    slides.forEach((slide, index) => {
+        slide.style.display = "none";
+        dots[index].classList.remove('active');
+    });
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add('active');
+}
+
+function nextSlide() {
+    slideIndex++;
+    showSlides(slideIndex);
+}
+
+function prevSlide() {
+    slideIndex--;
+    showSlides(slideIndex);
+}
+
+// Initialize the slideshow
+showSlides(slideIndex);
+
+// Automatic Slideshow
+let slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+// Event listeners for navigation arrows
+if (nextBtn && prev) {
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+    prev.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
+}
+
+// Event listeners for dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        slideIndex = index;
+        showSlides(slideIndex);
+        resetInterval();
+    });
+});
+
+// Reset interval when user interacts with slideshow
+function resetInterval(){
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+}
