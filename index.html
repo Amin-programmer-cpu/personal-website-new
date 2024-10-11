@@ -75,22 +75,13 @@
         <section id="contact" class="contact">
             <h2 data-key="contact_title">Contact Me</h2>
             <!-- Formspree Integration -->
-<form
-  action="https://formspree.io/f/xpwzzawz"
-  method="POST"
-    class="feedback-form"
->
-  <label>
-    Your email:
-    <input type="email" name="email" class="feedback-form-input">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message" class="feedback-form-input"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit" class="btn">Send</button>
-</form>
+
+                        <form action="https://formspree.io/f/xpwzzawz" method="POST" class="contact-form">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn" data-key="contact_button">Send Message</button>
+            </form>
+            
             <!-- If using PHP Backend, use the following form instead:
             <form action="send_mail.php" method="POST" class="contact-form">
                 <input type="email" name="email" placeholder="Your Email" required>
