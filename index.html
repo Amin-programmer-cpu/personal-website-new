@@ -36,6 +36,38 @@
     </header>
 
     <main>
+        <!-- Start Trending Section -->
+        <section id="trending" class="trending">
+            <h2 data-key="trending_title">Trending</h2>
+            <div class="slideshow-container">
+                <!-- Slide 1 -->
+                <div class="slide fade">
+                    <img src="trending1.jpg" alt="Trending 1">
+                    <div class="caption" data-key="trending_caption1">Trending Topic 1</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide fade">
+                    <img src="trending2.jpg" alt="Trending 2">
+                    <div class="caption" data-key="trending_caption2">Trending Topic 2</div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide fade">
+                    <img src="trending3.jpg" alt="Trending 3">
+                    <div class="caption" data-key="trending_caption3">Trending Topic 3</div>
+                </div>
+                <!-- Navigation Arrows -->
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+            <!-- Dots for navigation -->
+            <div class="dots-container">
+                <span class="dot" data-slide="1"></span> 
+                <span class="dot" data-slide="2"></span> 
+                <span class="dot" data-slide="3"></span> 
+            </div>
+        </section>
+        <!-- End Trending Section -->
+
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1 data-key="hero_title">Welcome to Amin's Vision</h1>
@@ -49,6 +81,7 @@
             </div>
         </section>
 
+        <!-- Rest of your sections: About, Blog, Contact -->
         <section id="about" class="about">
             <h2 data-key="about_title">About Me</h2>
             <div class="about-content">
@@ -76,12 +109,12 @@
             <h2 data-key="contact_title">Contact Me</h2>
             <!-- Formspree Integration -->
 
-                        <form action="https://formspree.io/f/xpwzzawz" method="POST" class="contact-form">
+            <form action="https://formspree.io/f/xpwzzawz" method="POST" class="contact-form">
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn" data-key="contact_button">Send Message</button>
             </form>
-            
+
             <!-- If using PHP Backend, use the following form instead:
             <form action="send_mail.php" method="POST" class="contact-form">
                 <input type="email" name="email" placeholder="Your Email" required>
