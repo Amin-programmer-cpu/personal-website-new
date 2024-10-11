@@ -620,22 +620,66 @@ footer {
         max-width: 100%;
     }
 
-    /* Adjust Contact Form Padding */
-    form {
-        padding: 1.5rem;
-    }
+/* Adjust Contact Form Padding */
+form {
+    padding: 2rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Additional Form Enhancements */
+/* Enhanced Form Fields */
 form input[type="email"],
 form textarea {
     background-color: #ffffff;
+    border: 2px solid #ddd;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 10px rgba(255,87,34,0.1);
+    outline: none;
+}
+
+/* Submit Button Enhancements */
 form button[type="submit"] {
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
     align-self: center;
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+form button[type="submit"]:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+    }
+
+    form button[type="submit"] {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
 
 
