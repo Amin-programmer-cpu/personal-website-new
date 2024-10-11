@@ -150,6 +150,7 @@ nav {
     padding-top: 80px; /* To account for fixed header */
     color: #ffffff;
     animation: fadeIn 1s ease-out;
+    background: url('hero-background.jpg') no-repeat center center/cover;
 }
 
 .hero-content {
@@ -223,6 +224,7 @@ nav {
     overflow-y: auto;
     z-index: 1000;
     color: black;
+    display: none; /* Initially hidden */
 }
 
 .search-results li {
@@ -373,59 +375,6 @@ nav {
     color: #555555;
 }
 
-/* Blog Detail Section */
-.blog-detail {
-    padding: 100px 20px 60px 20px;
-    background-color: #ffffff;
-    max-width: 800px;
-    margin: 100px auto 60px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-}
-
-.blog-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #ff5722;
-}
-
-.blog-meta {
-    font-size: 0.9em;
-    color: #777777;
-    margin-bottom: 30px;
-}
-
-.blog-content {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #333333;
-}
-
-.blog-placeholder {
-    width: 100%;
-    height: 300px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
-}
-
-.blog-placeholder .icon {
-    font-size: 6em;
-    color: #ff5722;
-}
-
-.blog-placeholder:hover {
-    transform: scale(1.05);
-}
-
-.blog-content p {
-    margin-bottom: 20px;
-}
-
 /* Contact Section */
 .contact {
     padding: 60px 20px;
@@ -450,15 +399,84 @@ nav {
     transform: translateX(-50%);
 }
 
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+input[type="email"],
+textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ff5722;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+}
+
+/* Alternative Form Styling (if using the alternative form) */
+/*
 .contact-form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: auto;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
+    width: 100%;
     padding: 12px 20px;
     margin-bottom: 20px;
     border: 2px solid #ddd;
@@ -474,9 +492,24 @@ nav {
 }
 
 .contact-form button {
-    align-self: center;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
 }
 
+.contact-form button:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+}
+*/
+
+/* Contact Info */
 .contact-info {
     text-align: center;
     margin-top: 30px;
@@ -535,7 +568,7 @@ footer {
     }
 }
 
-/* Responsive */
+/* Responsive Styling */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -586,4 +619,23 @@ footer {
     .search-results {
         max-width: 100%;
     }
+
+    /* Adjust Contact Form Padding */
+    form {
+        padding: 1.5rem;
+    }
 }
+
+/* Additional Form Enhancements */
+form input[type="email"],
+form textarea {
+    background-color: #ffffff;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    max-width: 200px;
+    align-self: center;
+}
+
+
