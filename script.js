@@ -38,9 +38,15 @@ const translations = {
         contact_email: "Email:",
         contact_telegram: "Telegram:",
         trending_title: "Trending",
-        trending_caption1: "Trending Topic 1",
-        trending_caption2: "Trending Topic 2",
-        trending_caption3: "Trending Topic 3"
+        trending_blog1_title: "The Future of AI in Everyday Life",
+        trending_blog1_excerpt: "Artificial Intelligence is rapidly transforming various aspects of our daily routines. Discover how AI is shaping the future...",
+        trending_blog1_read: "Read More",
+        trending_blog2_title: "Innovations in Renewable Energy",
+        trending_blog2_excerpt: "Renewable energy sources are becoming more efficient and accessible. Explore the latest innovations driving this change...",
+        trending_blog2_read: "Read More",
+        trending_blog3_title: "Cybersecurity in the Modern Age",
+        trending_blog3_excerpt: "As technology advances, so do the threats to our digital security. Learn about the essential practices to protect your data...",
+        trending_blog3_read: "Read More"
     },
     fa: {
         nav_home: "خانه",
@@ -66,11 +72,16 @@ const translations = {
         contact_email: "ایمیل:",
         contact_telegram: "تلگرام:",
         trending_title: "مورد توجه",
-        trending_caption1: "موضوع مورد توجه ۱",
-        trending_caption2: "موضوع مورد توجه ۲",
-        trending_caption3: "موضوع مورد توجه ۳"
-    }
-};
+        trending_blog1_title: "آینده هوش مصنوعی در زندگی روزمره",
+        trending_blog1_excerpt: "هوش مصنوعی به سرعت در حال تحول جنبه‌های مختلف روتین‌های روزانه ما است. کشف کنید که چگونه AI آینده را شکل می‌دهد...",
+        trending_blog1_read: "بیشتر بدانید",
+        trending_blog2_title: "نوآوری‌ها در انرژی تجدیدپذیر",
+        trending_blog2_excerpt: "منابع انرژی تجدیدپذیر در حال کارآمدتر و در دسترس‌تر شدن هستند. جدیدترین نوآوری‌های این تغییر را کاوش کنید...",
+        trending_blog2_read: "بیشتر بدانید",
+        trending_blog3_title: "امنیت سایبری در عصر مدرن",
+        trending_blog3_excerpt: "با پیشرفت فناوری، تهدیدات امنیت دیجیتال ما نیز افزایش می‌یابد. درباره تمرینات اساسی برای حفاظت از داده‌های خود بیاموزید...",
+        trending_blog3_read: "بیشتر بدانید"
+    };
 
 let currentLang = 'en';
 
@@ -98,8 +109,9 @@ function updateLanguage(){
         if(translations[currentLang][key]){
             el.textContent = translations[currentLang][key];
             // Handle links with href attributes if necessary
-            if(el.tagName.toLowerCase() === 'a' && el.href) {
-                // Optionally update link URLs based on language
+            if(el.tagName.toLowerCase() === 'a' && el.classList.contains('btn')){
+                // Update button text
+                el.textContent = translations[currentLang][key];
             }
         }
     });
@@ -134,6 +146,8 @@ const searchResults = document.getElementById('search-results');
 // Array of blog posts
 const blogPosts = [
     { title: "The Future of AI in Everyday Life", url: "blog1.html" },
+    { title: "Innovations in Renewable Energy", url: "blog2.html" },
+    { title: "Cybersecurity in the Modern Age", url: "blog3.html" },
     // Add more blog posts here as you create them
 ];
 
@@ -151,7 +165,7 @@ function displayResults(matches) {
         });
     } else {
         const li = document.createElement('li');
-        li.textContent = 'No results found';
+        li.textContent = currentLang === 'en' ? 'No results found' : 'نتیجه‌ای یافت نشد';
         li.style.cursor = 'default';
         li.style.color = '#777777';
         searchResults.appendChild(li);
@@ -164,8 +178,10 @@ searchInput.addEventListener('input', (e) => {
     const matches = blogPosts.filter(post => post.title.toLowerCase().includes(query));
     if(query.length > 0){
         displayResults(matches);
+        searchResults.style.display = 'block';
     } else {
         searchResults.innerHTML = '';
+        searchResults.style.display = 'none';
     }
 });
 
@@ -173,15 +189,16 @@ searchInput.addEventListener('input', (e) => {
 document.addEventListener('click', (e) => {
     if(!searchInput.contains(e.target) && !searchResults.contains(e.target)){
         searchResults.innerHTML = '';
+        searchResults.style.display = 'none';
     }
 });
 
-// Slideshow Functionality
+// Slideshow Functionality for Trending Section
 let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const prev = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const dots = document.querySelectorAll('.dot');
+const slides = document.querySelectorAll('.trending .slide');
+const prev = document.querySelector('.trending .prev');
+const nextBtn = document.querySelector('.trending .next');
+const dots = document.querySelectorAll('.trending .dot');
 
 function showSlides(n) {
     if (n >= slides.length) {slideIndex = 0}
@@ -199,7 +216,7 @@ function nextSlide() {
     showSlides(slideIndex);
 }
 
-function prevSlide() {
+function prevSlideFunc() {
     slideIndex--;
     showSlides(slideIndex);
 }
@@ -217,7 +234,7 @@ if (nextBtn && prev) {
         resetInterval();
     });
     prev.addEventListener('click', () => {
-        prevSlide();
+        prevSlideFunc();
         resetInterval();
     });
 }
